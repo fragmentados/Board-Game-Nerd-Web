@@ -146,5 +146,8 @@
       }
     }
   },
-  "defaultProject": "board-game-nerd-web"
+  "defaultProject": "board-game-nerd-web",
+  "cli": {
+    "analytics": "2baebe22-cd67-4110-9ce6-8599ac6da9c0"
+  }
 }

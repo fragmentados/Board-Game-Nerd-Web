@@ -22,7 +22,7 @@
     <mat-slide-toggle style="margin-top: 5px;" class="lmargin" title="Mostrar juegos olvidados" [(ngModel)]="showForgottenGames" (ngModelChange)="filter()">
       <img width="30px" height="30px" src="{{imageService.getImageUrl('olvidado', 'png')}}"/>
     </mat-slide-toggle>
-    <mat-slide-toggle style="margin-top: 5px;" class="lmargin" title="Mostrar juegos de mejor puntuación" [(ngModel)]="showBestScoredGames" (ngModelChange)="filter()">
+    <mat-slide-toggle style="margin-top: 5px;" class="lmargin" title="Puntuación >= 4" [(ngModel)]="showBestScoredGames" (ngModelChange)="filter()">
       <img width="30px" height="30px" src="{{imageService.getImageUrl('score', 'png')}}"/>
     </mat-slide-toggle>
     <button mat-button class="lmargin" title="Juego aleatorio" (click)="randomGame()">

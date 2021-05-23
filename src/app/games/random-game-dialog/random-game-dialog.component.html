@@ -1,6 +1,6 @@
 <h2 mat-dialog-title *ngIf="game">{{game.name}}</h2>
 <mat-dialog-content class="mat-typography" *ngIf="game">
-  <img class="gameimg" src="{{game.imageUrl}}"/>
+  <img class="gameimg" src="{{imageService.getGameImageUrl(game.imageUrls[0])}}"/>
   <app-scores [gameId]="gameId" [scoreInfo]="game.scoreInfo"></app-scores>
 </mat-dialog-content>
 <mat-dialog-actions align="center">
