@@ -1,0 +1,32 @@
+{
+  "APP_MENU": {
+    "LIST_GAMES": "Games",
+    "ADD_GAME": "Add Game",
+    "LAST_BUY_DATE": " last purchase",
+    "BUY": "Register buy",
+    "NUM_DAYS": "Days since last purchase"
+  },
+  "ADD_GAME": {
+    "THEMES": "Themes",
+    "COMPLEXITIES": "Complexities",
+    "LOCATIONS": "Ubicaciones",
+    "MEDIUMS": "Mediums",
+    "STYLES": "Styles",
+    "VICTORYS": "Victory Condition"
+  },
+  "COMMON": {
+    "IMAGE": "Image",
+    "NAME": "Name",
+    "LOCATION": "Location",
+    "CREATE": "Create",
+    "DESCRIPTION": "Description",
+    "MIN_PLAYERS": "Min Players",
+    "MAX_PLAYERS": "Máx Players",
+    "GAME_CREATED": "Game Created",
+    "NUM_PLAYERS": "Players",
+    "VICTORY": "Victory",
+    "DURATION": "Duration",
+    "MOVE": "Move",
+    "LAST_PLAY": "Last play"
+  }
+}
