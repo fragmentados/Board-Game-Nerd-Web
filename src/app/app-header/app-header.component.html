@@ -2,7 +2,7 @@
 <div class="efw-topnav" id="myTopnav">
   <div>
     <a id="menuListGames" routerLink="/games"><img width="20px" height="20px" src="assets/boardGame.svg"/>Board Game Nerd!</a>
-    <a id="menuListGames" routerLink="/games">Juegos</a>
+    <a id="menuListGames" routerLink="/games">Colección</a>
     <a *ngIf="!isBackendMocked" id="menuCreateGames" routerLink="/games/addGame">
     Crear <img class="lmargin" width="20px" height="20px" src="{{imageService.getImageUrl('crear', 'jpg')}}"/>
     </a>
