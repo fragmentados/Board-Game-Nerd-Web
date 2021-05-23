@@ -1,0 +1,7 @@
+.div {
+  text-align: center;
+}
+
+:host view-game[label] score-name {
+  margin-top: 10px;
+}

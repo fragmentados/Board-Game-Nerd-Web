@@ -1,0 +1,10 @@
+{
+  "APP_MENU": {
+    "LIST_GAMES": "Xogos",
+    "ADD_GAME": "Rexistrar Xogo"
+  },
+  "COMMON": {
+    "NAME": "Nome",
+    "LOCATION": "Ubicación"
+  }
+}

@@ -1,0 +1,13 @@
+<h2 mat-dialog-title *ngIf="game">{{game.name}}</h2>
+<mat-dialog-content class="mat-typography" *ngIf="game">
+  <img class="gameimg" src="{{game.imageUrl}}"/>
+  <app-scores [gameId]="gameId" [scoreInfo]="game.scoreInfo"></app-scores>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button [mat-dialog-close]="true" title="Reintentar!" class="lmargin">
+    <img class="icon" src="{{imageService.getImageUrl('aleatoriedad', 'png')}}"/>
+  </button>
+  <button [mat-dialog-close]="false" title="A jugar!" class="lmargin" (click)="onOkClick()">
+    <img class="icon" src="{{imageService.getImageUrl('ok', 'png')}}"/>
+  </button>
+</mat-dialog-actions>
