@@ -25,7 +25,8 @@ export class GamesComponent implements OnDestroy, OnInit  {
   games: Game[];
   masters: Masters;
   dtOptions: DataTables.Settings = {
-    paging: false
+    paging: false,
+    responsive: true
   };
   dtTrigger: Subject<Game> = new Subject();
   players: number;

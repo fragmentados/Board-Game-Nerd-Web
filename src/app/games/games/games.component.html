@@ -1,40 +1,57 @@
 <div class="form-group" *ngIf="masters && games">
   <div class="flex-div">
-    <img title="Jugadores" width="30px" height="30px" src="{{imageService.getImageUrl('player', 'png')}}"/>
-    <input style="width:75px;" class="form-control lmargin" type="number" name="players" id="players" (ngModelChange)="filter()" [(ngModel)]="players" />
-    <img title="Complejidad" class="lmargin" width="30px" height="30px" src="{{imageService.getImageUrl('complexity', 'png')}}"/>
-    <select style="width:110px;" class="form-control lmargin" (ngModelChange)="filter()" [(ngModel)]="complexity" #ComplexitySelect="ngModel" name="ComplexitySelect" id="Complexitys">
-      <option></option>
-      <option *ngFor="let complexity of masters.complexities" [ngValue]="complexity.name">{{complexity.name}}</option>
-    </select>
-    <img title="Victoria" class="lmargin" width="30px" height="30px" src="{{imageService.getImageUrl('victory', 'jpg')}}"/>
-    <select style="width:220px;" class="form-control lmargin" (ngModelChange)="filter()" [(ngModel)]="victory" #victorySelect="ngModel" name="victorySelect" id="victorys">
-      <option></option>
-      <option *ngFor="let victory of masters.victories" [ngValue]="victory.name">{{victory.name}}</option>
-    </select>
-    <img class="lmargin" title="Duración" width="30px" height="30px" src="{{imageService.getImageUrl('duration', 'png')}}"/>
-    <input style="width:75px;" class="form-control lmargin" type="number" name="duration" id="duration" (ngModelChange)="filter()" [(ngModel)]="duration" />
-    <img class="lmargin" title="Temática" width="30px" height="30px" src="{{imageService.getImageUrl('theme', 'png')}}"/>
-    <select style="width:170px;" class="form-control lmargin" (ngModelChange)="filter()" [(ngModel)]="theme" #ThemeSelect="ngModel" name="ThemeSelect" id="Themes">
-      <option></option>
-      <option *ngFor="let theme of masters.themes" [ngValue]="theme.name">{{theme.name}}</option>
-    </select>
+    <div class="ifdiv">
+      <img title="Jugadores" width="30px" height="30px" src="{{imageService.getImageUrl('player', 'png')}}"/>
+      <input style="width:75px;" class="form-control lmargin" type="number" name="players" id="players" (ngModelChange)="filter()" [(ngModel)]="players" />
+    </div>
+    <div class="ifdiv">
+      <img title="Complejidad" class="lmargin" width="30px" height="30px" src="{{imageService.getImageUrl('complexity', 'png')}}"/>
+      <select style="width:110px;" class="form-control lmargin" (ngModelChange)="filter()" [(ngModel)]="complexity" #ComplexitySelect="ngModel" name="ComplexitySelect" id="Complexitys">
+        <option></option>
+        <option *ngFor="let complexity of masters.complexities" [ngValue]="complexity.name">{{complexity.name}}</option>
+      </select>
+    </div>
+    <div class="ifdiv">
+      <img title="Victoria" class="lmargin" width="30px" height="30px" src="{{imageService.getImageUrl('victory', 'jpg')}}"/>
+      <select style="width:220px;" class="form-control lmargin" (ngModelChange)="filter()" [(ngModel)]="victory" #victorySelect="ngModel" name="victorySelect" id="victorys">
+        <option></option>
+        <option *ngFor="let victory of masters.victories" [ngValue]="victory.name">{{victory.name}}</option>
+      </select>
+    </div>
+    <div class="ifdiv">
+      <img class="lmargin" title="Duración" width="30px" height="30px" src="{{imageService.getImageUrl('duration', 'png')}}"/>
+      <input style="width:75px;" class="form-control lmargin" type="number" name="duration" id="duration" (ngModelChange)="filter()" [(ngModel)]="duration" />
+    </div>
+    <div class="ifdiv">
+      <img class="lmargin" title="Temática" width="30px" height="30px" src="{{imageService.getImageUrl('theme', 'png')}}"/>
+      <select style="width:170px;" class="form-control lmargin" (ngModelChange)="filter()" [(ngModel)]="theme" #ThemeSelect="ngModel" name="ThemeSelect" id="Themes">
+        <option></option>
+        <option *ngFor="let theme of masters.themes" [ngValue]="theme.name">{{theme.name}}</option>
+      </select>
+    </div>
     <mat-slide-toggle style="margin-top: 5px;" class="lmargin" title="Mostrar juegos olvidados" [(ngModel)]="showForgottenGames" (ngModelChange)="filter()">
       <img width="30px" height="30px" src="{{imageService.getImageUrl('olvidado', 'png')}}"/>
     </mat-slide-toggle>
     <mat-slide-toggle style="margin-top: 5px;" class="lmargin" title="Puntuación >= 4" [(ngModel)]="showBestScoredGames" (ngModelChange)="filter()">
       <img width="30px" height="30px" src="{{imageService.getImageUrl('score', 'png')}}"/>
     </mat-slide-toggle>
-    <button mat-button class="lmargin" title="Juego aleatorio" (click)="randomGame()">
+    <button class="lmargin" mat-button title="Juego aleatorio" (click)="randomGame()">
       <img width="30px" height="30px" src="{{imageService.getImageUrl('aleatoriedad', 'png')}}"/>
     </button>
     <button class="lmargin" title="Limpiar filtros" (click)="clearFilter()">
       <img width="30px" height="30px" src="{{imageService.getImageUrl('eliminar', 'jpg')}}"/>
     </button>
-    <p *ngIf="games"><b>Contador total de juegos actual: {{games.length}} !!!</b></p>
+    <p class="mobhide" *ngIf="games"><b>Contador total de juegos actual: {{games.length}} !!!</b></p>
   </div>
 </div>
-<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+<!--<div class="container">
+  <div class="vertical-center">
+    <button mat-button title="Juego aleatorio" (click)="randomGame()">
+      <img width="30px" height="30px" src="{{imageService.getImageUrl('aleatoriedad', 'png')}}"/>
+    </button>
+  </div>
+</div>-->
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" style="width: 100%;">
   <thead>
     <tr>
       <th class="hidden"></th>
@@ -46,23 +63,23 @@
       <th>
         <img width="25px" height="25px" src="{{imageService.getImageUrl('player', 'png')}}"/> máx
       </th>
-      <th class="mobhide">
+      <th>
         <img width="25px" height="25px" src="{{imageService.getImageUrl('victory', 'jpg')}}"/>{{ 'COMMON.VICTORY' | translate }}
       </th>
-      <th class="mobhide">
+      <th>
         <img width="25px" height="25px" src="{{imageService.getImageUrl('complexity', 'png')}}"/>{{ 'ADD_GAME.COMPLEXITIES' | translate }}
       </th>
-      <th class="mobhide">
+      <th>
         <img width="25px" height="25px" src="{{imageService.getImageUrl('location', 'jpg')}}"/> {{ 'COMMON.LOCATION' | translate }}
       </th>
       <th class="hidden"></th>
-      <th class="mobhide">
+      <th>
         <img width="25px" height="25px" src="{{imageService.getImageUrl('duration', 'png')}}"/> {{ 'COMMON.DURATION' | translate }}
       </th>
-      <th class="mobhide">
+      <th>
         <img width="25px" height="25px" src="{{imageService.getImageUrl('calendar', 'png')}}"/> {{ 'COMMON.LAST_PLAY' | translate }}
       </th>
-      <th class="mobhide">
+      <th>
         <img width="25px" height="25px" src="{{imageService.getImageUrl('score', 'png')}}"/> {{ 'COMMON.SCORE' | translate }}
       </th>
       <th class="hidden"></th>
@@ -75,9 +92,9 @@
       <td>{{game.name}}</td>
       <td>{{game.minPlayers}}</td>
       <td>{{game.maxPlayers}}</td>
-      <td class="mobhide">{{game.victory}}</td>
-      <td class="mobhide">{{game.complexity.name}}</td>
-      <td class="mobhide">{{game.location}}</td>
+      <td>{{game.victory}}</td>
+      <td>{{game.complexity.name}}</td>
+      <td>{{game.location}}</td>
       <td class="hidden">{{game.theme}}</td>
       <td>{{game.duration}} min</td>
       <td>{{game.lastPlayedDate}}</td>
