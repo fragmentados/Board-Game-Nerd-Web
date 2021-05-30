@@ -11,18 +11,18 @@
     </a>
   </div>
   <div class="efw-dropdown user-menu" *ngIf="constants">
-    <button class="efw-dropbtn">{{ 'APP_MENU.NUM_DAYS' | translate }} : {{constants.numDaysSinceLastBuy}}
+    <button class="efw-dropbtn">Días desde la última compra : {{constants.numDaysSinceLastBuy}}
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="efw-dropdown-content">
       <a (click)="buy()">
-        <img width="20px" height="20px" src="{{imageService.getImageUrl('compra', 'png')}}"/> {{ 'APP_MENU.BUY' | translate }}
+        <img width="20px" height="20px" src="{{imageService.getImageUrl('compra', 'png')}}"/> Registrar compra
       </a>
     </div>
   </div>
   <div class="user-menu" *ngIf="constants">
     <p>
-      <img class="lmargin" width="20px" height="20px" src="{{imageService.getImageUrl('calendar', 'png')}}"/> {{ 'APP_MENU.LAST_BUY_DATE' | translate }} : {{constants.lastBuyDate}}
+      <img class="lmargin" width="20px" height="20px" src="{{imageService.getImageUrl('calendar', 'png')}}"/>  última compra : {{constants.lastBuyDate}}
     </p>
   </div>
   <a href="javascript:void(0);" class="efw-icon" (click)="displayMobileNavBar()">

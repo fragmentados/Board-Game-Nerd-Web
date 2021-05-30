@@ -32,14 +32,14 @@
       <div class="form-group lmargin">
         <div class="ifdiv">
           <img class="icon" src="{{imageService.getImageUrl('theme', 'png')}}"/>
-          <label class="lmargin" for="themeselect">{{ 'ADD_GAME.THEMES' | translate }}:</label>
+          <label class="lmargin" for="themeselect">Temática:</label>
         </div>
         <input [(ngModel)]="game.theme" name="Theme" class="form-control" id="Theme">
       </div>
       <div class="form-group lmargin">
         <div class="ifdiv">
           <img class="icon" src="{{imageService.getImageUrl('complexity', 'png')}}"/>
-          <label class="lmargin">{{ 'ADD_GAME.COMPLEXITIES' | translate }}:</label>
+          <label class="lmargin">Complejidad:</label>
         </div>
         <input [(ngModel)]="game.complexity" name="Complexity" class="form-control" id="Complexity">
       </div>
@@ -47,7 +47,7 @@
     <div>
       <div class="ifdiv">
         <img class="icon" src="{{imageService.getImageUrl('location', 'jpg')}}"/>
-        <label class="lmargin">{{ 'ADD_GAME.LOCATIONS' | translate }}:</label>
+        <label class="lmargin">Ubicación:</label>
       </div>
     </div>
     <div class="form-group" *ngIf="masters && masters.locations">
@@ -63,7 +63,7 @@
     <div>
       <div class="ifdiv">
         <img class="icon" src="{{imageService.getImageUrl('duration', 'png')}}"/>
-        <label class="lmargin">{{ 'COMMON.LAST_PLAY' | translate }}:</label>
+        <label class="lmargin"> última jugada:</label>
       </div>
     </div>
     <div class="form-group">
@@ -78,28 +78,28 @@
       <div class="form-group">
         <div class="ifdiv">
           <img class="icon" src="{{imageService.getImageUrl('medium', 'png')}}"/>
-          <label class="lmargin" for="mediumselect">{{ 'ADD_GAME.MEDIUMS' | translate }}:</label>
+          <label class="lmargin" for="mediumselect">Medio:</label>
         </div>
         <input [(ngModel)]="game.medium" name="Medium" class="form-control" id="Medium">
       </div>
       <div class="form-group lmargin">
         <div class="ifdiv">
           <img class="icon" src="{{imageService.getImageUrl('style', 'png')}}"/>
-          <label class="lmargin" for="styleselect">{{ 'ADD_GAME.STYLES' | translate }}:</label>
+          <label class="lmargin" for="styleselect">Estilo:</label>
         </div>
         <input [(ngModel)]="game.style" name="Style" class="form-control" id="Style">
       </div>
       <div class="form-group lmargin">
         <div class="ifdiv">
           <img class="icon" src="{{imageService.getImageUrl('victory', 'jpg')}}">
-          <label class="lmargin">{{ 'ADD_GAME.VICTORYS' | translate }}:</label>
+          <label class="lmargin">Victoria:</label>
         </div>
         <input [(ngModel)]="game.victory" name="Victory" class="form-control" id="Victory">
       </div>
       <div class="form-group lmargin">
         <div class="ifdiv">
           <img class="icon" src="{{imageService.getImageUrl('duration', 'png')}}">
-          <label class="lmargin">{{ 'COMMON.DURATION' | translate }}:</label>
+          <label class="lmargin">Duración:</label>
         </div>
         <input [(ngModel)]="game.duration" name="Duration" class="form-control" id="Duration">
       </div>
@@ -107,14 +107,14 @@
     <div class="form-group">
       <div class="ifdiv">
         <img class="icon" src="{{imageService.getImageUrl('description', 'jpg')}}"/>
-        <label class="lmargin" for="name">{{ 'COMMON.DESCRIPTION' | translate }}:</label>
+        <label class="lmargin" for="name">Descripción:</label>
       </div>
       <textarea style="resize: none" [(ngModel)]="game.description" name="Description" class="form-control" id="Description"></textarea>
     </div>
     <!--<div class="form-group">-->
       <div class="ifdiv">
         <img class="icon" src="{{imageService.getImageUrl('score', 'png')}}"/>
-        <label class="lmargin" for="name">{{ 'COMMON.SCORES' | translate }}:</label>
+        <label class="lmargin" for="name">Puntuaciones:</label>
       </div>
       <app-scores [gameId]="gameId" [scoreInfo]="game.scoreInfo" *ngIf="game.scoreInfo"></app-scores>
     <!--</div>-->
