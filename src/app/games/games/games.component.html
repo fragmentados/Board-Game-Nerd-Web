@@ -29,6 +29,13 @@
         <option *ngFor="let theme of masters.themes" [ngValue]="theme.name">{{theme.name}}</option>
       </select>
     </div>
+    <div class="ifdiv">
+      <img class="lmargin" title="Medio" width="30px" height="30px" src="{{imageService.getImageUrl('medium', 'png')}}"/>
+      <select style="width:170px;" class="form-control lmargin" (ngModelChange)="filter()" [(ngModel)]="medium" #ThemeSelect="ngModel" name="MediumSelect" id="Mediums">
+        <option></option>
+        <option *ngFor="let medium of masters.media" [ngValue]="medium.name">{{medium.name}}</option>
+      </select>
+    </div>
     <mat-slide-toggle style="margin-top: 5px;" class="lmargin" title="Mostrar juegos olvidados" [(ngModel)]="showForgottenGames" (ngModelChange)="filter()">
       <img width="30px" height="30px" src="{{imageService.getImageUrl('olvidado', 'png')}}"/>
     </mat-slide-toggle>
@@ -83,6 +90,7 @@
         <img width="25px" height="25px" src="{{imageService.getImageUrl('score', 'png')}}"/> Puntuación
       </th>
       <th class="hidden"></th>
+      <th class="hidden"></th>
     </tr>
   </thead>
   <tbody *ngIf="games">
@@ -100,6 +108,7 @@
       <td>{{game.lastPlayedDate}}</td>
       <td>{{game.avgScore}}</td>
       <td class="hidden">{{game.imageUrl}}</td>
+      <td class="hidden">{{game.medium}}</td>
     </tr>
   </tbody>
   <tbody *ngIf="!games">

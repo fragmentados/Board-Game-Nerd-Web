@@ -33,6 +33,7 @@ export class GamesComponent implements OnDestroy, OnInit  {
   complexity: string;
   victory: string;
   theme: string;
+  medium: string;
   duration: number;
   isMobile = false;
   showForgottenGames: boolean;
@@ -110,6 +111,7 @@ export class GamesComponent implements OnDestroy, OnInit  {
     const lastPlayedMoment = moment(lastPlayedRow, 'DD/MM/YYYY');
     const twoMonthsAgoMoment = moment(new Date(), 'DD/MM/YYYY').subtract(2, 'month');
     const avgScoreRow = data[11];
+    const mediumRow = data[13];
     if (!this.showForgottenGames || (!lastPlayedRow) || (lastPlayedMoment <= twoMonthsAgoMoment)) {
       if (!this.showBestScoredGames || (!avgScoreRow) || (avgScoreRow >= 4)) {
         if ((!this.players || isNaN(this.players)) || (minPlayers <= this.players && maxPlayers >= this.players)) {
@@ -117,7 +119,9 @@ export class GamesComponent implements OnDestroy, OnInit  {
             if ((!this.victory) || (victoryRow === this.victory)) {
               if ((!this.theme) || (themeRow === this.theme)) {
                 if ((!this.duration) || (durationRow <= this.duration)) {
-                  return true;
+                  if ((!this.medium) || (mediumRow === this.medium)) {
+                    return true;
+                  }
                 }
               }
             }
