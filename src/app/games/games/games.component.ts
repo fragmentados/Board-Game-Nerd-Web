@@ -138,6 +138,7 @@ export class GamesComponent implements OnDestroy, OnInit  {
     this.complexity = undefined;
     this.theme = undefined;
     this.duration = undefined;
+    this.medium = undefined;
     const elm = document.getElementById('DataTables_Table_0_filter');
     if (elm) {
       elm.remove();
