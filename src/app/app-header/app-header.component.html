@@ -14,7 +14,7 @@
     <button class="efw-dropbtn">Días desde la última compra : {{constants.numDaysSinceLastBuy}}
       <i class="fa fa-caret-down"></i>
     </button>
-    <div class="efw-dropdown-content">
+    <div *ngIf="!isBackendMocked" class="efw-dropdown-content">
       <a (click)="buy()">
         <img width="20px" height="20px" src="{{imageService.getImageUrl('compra', 'png')}}"/> Registrar compra
       </a>
