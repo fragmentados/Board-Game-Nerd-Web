@@ -63,23 +63,23 @@ export class ViewGameComponent implements OnInit {
   }
 
   canBePrevious(): boolean {
-    const gameIndex = this.games.indexOf(this.games.filter(g => g.id === this.gameId)[0]);
+    const gameIndex = this.games.indexOf(this.games.filter(g => g.id == this.gameId)[0]);
     return gameIndex > 0;
   }
 
   canBeNext(): boolean {
-    const gameIndex = this.games.indexOf(this.games.filter(g => g.id === this.gameId)[0]);
+    const gameIndex = this.games.indexOf(this.games.filter(g => g.id == this.gameId)[0]);
     return gameIndex < (this.games.length - 1);
   }
 
   previousGame() {
-    const gameIndex = this.games.indexOf(this.games.filter(g => g.id === this.gameId)[0]);
+    const gameIndex = this.games.indexOf(this.games.filter(g => g.id == this.gameId)[0]);
     this.gameId = this.games[gameIndex - 1].id;
     this.findGame();
   }
 
   nextGame() {
-    const gameIndex = this.games.indexOf(this.games.filter(g => g.id === this.gameId)[0]);
+    const gameIndex = this.games.indexOf(this.games.filter(g => g.id == this.gameId)[0]);
     this.gameId = this.games[gameIndex + 1].id;
     this.findGame();
   }
